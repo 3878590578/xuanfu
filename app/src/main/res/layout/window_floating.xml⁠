@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/floating_root"
+    android:layout_width="320dp"
+    android:layout_height="240dp"
+    android:background="#DD000000"
+    android:orientation="vertical"
+    android:padding="2dp">
+
+    <!-- 顶部拖拽与操作栏 -->
+    <LinearLayout
+        android:id="@+id/header_bar"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:background="#333333"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="4dp">
+
+        <EditText
+            android:id="@+id/et_url"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#222222"
+            android:hint="输入网址..."
+            android:imeOptions="actionGo"
+            android:inputType="textUri"
+            android:paddingHorizontal="8dp"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#888888"
+            android:textSize="12sp" />
+
+        <Button
+            android:id="@+id/btn_go"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:text="前往"
+            android:textSize="10sp" />
+
+        <Button
+            android:id="@+id/btn_close"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:text="X"
+            android:textColor="#FF5555"
+            android:textSize="10sp" />
+    </LinearLayout>
+
+    <!-- 网页加载区 -->
+    <WebView
+        android:id="@+id/web_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</LinearLayout>
