@@ -1,25 +1,21 @@
-plugins {
-    id 'com.android.application'
-}
-
-android {
-    namespace 'com.example.helium'
-    compileSdk 34
-
-    defaultConfig {
-        applicationId "com.example.helium"
-        minSdk 21
-        targetSdk 34
-        versionCode 1
-        versionName "1.0"
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
     }
-
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_17
-        targetCompatibility JavaVersion.VERSION_17
+    dependencies {
+        // 明确指定 Android Gradle 插件的版本
+        classpath 'com.android.tools.build:gradle:8.1.4'
     }
 }
 
-dependencies {
-    // 零第三方依赖，只用 Android SDK 自带的基础类
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
 }
